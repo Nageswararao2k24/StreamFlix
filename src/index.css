@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #071026; /* deep navy */
+  --color-bg-elevated: #0d1730; /* slightly lighter navy for elevated surfaces */
+  --color-bg-card: #0f1b36; /* card background with blue tint */
+  --color-text: #eef6ff; /* soft off-white */
+  --color-text-muted: #9fb0c8; /* muted blue-gray */
+  --color-accent: #2ec4b6; /* teal accent */
+  --color-accent-hover: #4fe0c9; /* lighter teal on hover */
+  --color-ember: #ff6b9a; /* subtle pink for alerts */
+  --color-line: #17304a; /* divider/line color */
+
+  --font-display: "Bebas Neue", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+/* Sprocket-hole strip: the film-reel signature motif used as a divider */
+.sprocket-strip {
+  height: 10px;
+  background-image: radial-gradient(circle, var(--color-bg) 2.5px, transparent 2.6px);
+  background-size: 22px 10px;
+  background-position: 8px center;
+  background-color: var(--color-line);
+  opacity: 0.6;
+}
+
+/* Custom scrollbar for horizontal movie rows */
+.row-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.row-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.row-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 4px;
+}
+
+.row-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
